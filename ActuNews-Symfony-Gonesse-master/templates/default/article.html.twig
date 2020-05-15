@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block title %}
+    {{ article.title }} | ActuNews
+{% endblock %}
+
+{% block content %}
+    <div class="p-3 mx-auto text-center">
+        <h1 class="display-4">
+            {{ article.title }}
+        </h1>
+    </div>
+
+    {# Affichage notifications flash #}
+    {% for message in app.flashes('notice') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    <div class="py-5 bg-light">
+        <div class="container ">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <img class="card-img-top"
+                         src="{{ asset('images/articles/' ~ article.image) }}" alt="{{ article.title }}">
+                </div>
+                <div class="col-md-6">
+                    {{ article.content | raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

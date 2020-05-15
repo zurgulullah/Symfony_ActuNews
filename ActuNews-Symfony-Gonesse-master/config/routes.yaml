@@ -1,0 +1,11 @@
+default_home:
+    path: /
+    controller: App\Controller\DefaultController::home
+
+#user_register:
+#    path: /user/register
+#    controller: App\Controller\UserController::register
+#
+#user_login:
+#    path: /user/login
+#    controller: App\Controller\UserController::login
